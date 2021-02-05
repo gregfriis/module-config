@@ -9,12 +9,7 @@ public class ObjectNodeTest {
 
     @Test
     public void testToString() {
-        ObjectNode objectNode = ObjectNode.create()
-                .withField("s", STRING_A)
-                .withField("n", NumberNode.create(0))
-                .withField("l", ListNode.create(STRING_A, STRING_B, STRING_C))
-                .build();
-        assertEquals("{l:[\"a\",\"b\",\"c\"],n:0,s:\"a\"}", objectNode.toString());
+        assertEquals("{l:[\"a\",\"b\",\"c\"],n:0,s:\"a\"}", OBJECT_ALL_TYPES.toString());
     }
 
     @Test

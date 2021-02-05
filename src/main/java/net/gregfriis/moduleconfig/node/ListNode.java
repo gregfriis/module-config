@@ -1,8 +1,6 @@
 package net.gregfriis.moduleconfig.node;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -19,6 +17,10 @@ public class ListNode implements ModuleNode {
 
     public static ListNode create(ModuleNode... elements) {
         return new ListNode(Arrays.asList(elements));
+    }
+
+    public static ListNode create(Collection<ModuleNode> elements) {
+        return new ListNode(new ArrayList<>(elements));
     }
 
     public Stream<ModuleNode> stream() {

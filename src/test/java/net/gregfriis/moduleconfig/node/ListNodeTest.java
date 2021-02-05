@@ -7,9 +7,6 @@ import static org.junit.Assert.assertEquals;
 
 public class ListNodeTest {
 
-    private static final ListNode LIST_ABC = ListNode.create(STRING_A, STRING_B, STRING_C);
-    private static final ListNode LIST_EMPTY = ListNode.create();
-
     @Test
     public void testToString() {
         {
