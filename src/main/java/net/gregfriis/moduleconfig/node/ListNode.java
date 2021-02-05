@@ -1,7 +1,5 @@
 package net.gregfriis.moduleconfig.node;
 
-import net.gregfriis.moduleconfig.node.exception.NodeCastException;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -58,16 +56,6 @@ public class ListNode implements ModuleNode {
     @Override
     public ModuleNodeType getType() {
         return ModuleNodeType.LIST;
-    }
-
-    @Override
-    public ObjectNode asObject() {
-        throw new NodeCastException();
-    }
-
-    @Override
-    public StringNode asString() {
-        throw new NodeCastException();
     }
 
     @Override

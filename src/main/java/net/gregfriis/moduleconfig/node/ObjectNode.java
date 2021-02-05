@@ -1,7 +1,6 @@
 package net.gregfriis.moduleconfig.node;
 
 import net.gregfriis.moduleconfig.node.exception.MissingFieldException;
-import net.gregfriis.moduleconfig.node.exception.NodeCastException;
 import net.gregfriis.moduleconfig.util.CollectionUtils;
 
 import java.util.HashMap;
@@ -59,16 +58,6 @@ public class ObjectNode implements ModuleNode {
     @Override
     public ObjectNode asObject() {
         return this;
-    }
-
-    @Override
-    public StringNode asString() {
-        throw new NodeCastException();
-    }
-
-    @Override
-    public ListNode asList() {
-        throw new NodeCastException();
     }
 
     public ModuleNode expectField(String key) {
