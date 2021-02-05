@@ -22,6 +22,14 @@ public class StringNode implements ModuleNode {
         return "\"" + value + "\"";
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof StringNode) {
+            return this.value.equals(((StringNode) obj).value);
+        }
+        return false;
+    }
+
     public static StringNode create(String value) {
         return new StringNode(value);
     }
@@ -38,6 +46,12 @@ public class StringNode implements ModuleNode {
 
     @Override
     public StringNode asStringNode() {
+        return this;
+    }
+
+    @Override
+    public StringNode mergeOnto(ModuleNode base) {
+        // Literal nodes simply overwrite whatever they are being merged into
         return this;
     }
 }
