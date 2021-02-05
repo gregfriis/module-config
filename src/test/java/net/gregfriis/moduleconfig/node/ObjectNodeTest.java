@@ -10,10 +10,11 @@ public class ObjectNodeTest {
     @Test
     public void testToString() {
         ObjectNode objectNode = ObjectNode.create()
-                .withField("0", STRING_A)
-                .withField("1", STRING_B)
+                .withField("s", STRING_A)
+                .withField("n", NumberNode.create(0))
+                .withField("l", ListNode.create(STRING_A, STRING_B, STRING_C))
                 .build();
-        assertEquals("{0:\"a\",1:\"b\"}", objectNode.toString());
+        assertEquals("{l:[\"a\",\"b\",\"c\"],n:0,s:\"a\"}", objectNode.toString());
     }
 
     @Test
