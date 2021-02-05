@@ -2,10 +2,11 @@ package net.gregfriis.moduleconfig.node;
 
 import net.gregfriis.moduleconfig.node.exception.MissingFieldException;
 import net.gregfriis.moduleconfig.node.exception.NodeCastException;
-import net.gregfriis.moduleconfig.util.MapUtils;
+import net.gregfriis.moduleconfig.util.CollectionUtils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -19,7 +20,7 @@ public class ObjectNode implements ModuleNode {
 
     private ObjectNode(Map<String, ModuleNode> fields) {
         // Defensively shallow copy the fields in case of builder re-use
-        this.fields = MapUtils.shallowCopy(fields);
+        this.fields = CollectionUtils.shallowCopy(fields);
     }
 
     @Override
@@ -30,11 +31,20 @@ public class ObjectNode implements ModuleNode {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof ObjectNode) {
-            return fields.equals(((ObjectNode) obj).fields);
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
         }
-        return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ObjectNode that = (ObjectNode) o;
+        return fields.equals(that.fields);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fields);
     }
 
     public static Builder create() {
@@ -53,6 +63,11 @@ public class ObjectNode implements ModuleNode {
 
     @Override
     public StringNode asStringNode() {
+        throw new NodeCastException();
+    }
+
+    @Override
+    public ListNode asListNode() {
         throw new NodeCastException();
     }
 

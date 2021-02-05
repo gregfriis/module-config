@@ -2,6 +2,8 @@ package net.gregfriis.moduleconfig.node;
 
 import net.gregfriis.moduleconfig.node.exception.NodeCastException;
 
+import java.util.Objects;
+
 /**
  *
  */
@@ -23,11 +25,20 @@ public class StringNode implements ModuleNode {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof StringNode) {
-            return this.value.equals(((StringNode) obj).value);
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
         }
-        return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        StringNode that = (StringNode) o;
+        return value.equals(that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 
     public static StringNode create(String value) {
@@ -47,6 +58,11 @@ public class StringNode implements ModuleNode {
     @Override
     public StringNode asStringNode() {
         return this;
+    }
+
+    @Override
+    public ListNode asListNode() {
+        throw new NodeCastException();
     }
 
     @Override

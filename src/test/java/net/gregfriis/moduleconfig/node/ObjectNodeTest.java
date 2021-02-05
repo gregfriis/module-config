@@ -1,19 +1,11 @@
-package net.gregfriis.moduleconfig;
+package net.gregfriis.moduleconfig.node;
 
-import net.gregfriis.moduleconfig.node.ObjectNode;
-import net.gregfriis.moduleconfig.node.StringNode;
 import org.junit.Test;
 
+import static net.gregfriis.moduleconfig.node.ModuleNodeTestUtils.*;
 import static org.junit.Assert.assertEquals;
 
-/**
- *
- */
 public class ObjectNodeTest {
-
-    private static final StringNode STRING_A = StringNode.create("a");
-    private static final StringNode STRING_B = StringNode.create("b");
-    private static final StringNode STRING_C = StringNode.create("c");
 
     @Test
     public void testToString() {
@@ -25,7 +17,7 @@ public class ObjectNodeTest {
     }
 
     @Test
-    public void testMergeInto() {
+    public void testMergeOnto() {
         {
             // Simple merge with no overlaps
             ObjectNode a = ObjectNode.create()
