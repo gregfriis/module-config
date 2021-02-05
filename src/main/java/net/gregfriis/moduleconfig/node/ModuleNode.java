@@ -5,8 +5,8 @@ package net.gregfriis.moduleconfig.node;
  */
 public interface ModuleNode {
     ModuleNodeType getType();
-    ObjectNode asObjectNode();
-    StringNode asStringNode();
-    ListNode asListNode();
+    ObjectNode asObject();
+    StringNode asString();
+    ListNode asList();
     ModuleNode mergeOnto(ModuleNode base);
 }

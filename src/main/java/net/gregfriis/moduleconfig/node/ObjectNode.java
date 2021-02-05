@@ -57,17 +57,17 @@ public class ObjectNode implements ModuleNode {
     }
 
     @Override
-    public ObjectNode asObjectNode() {
+    public ObjectNode asObject() {
         return this;
     }
 
     @Override
-    public StringNode asStringNode() {
+    public StringNode asString() {
         throw new NodeCastException();
     }
 
     @Override
-    public ListNode asListNode() {
+    public ListNode asList() {
         throw new NodeCastException();
     }
 
@@ -86,7 +86,7 @@ public class ObjectNode implements ModuleNode {
     public ObjectNode mergeOnto(ModuleNode base) {
         // If base node is an object, merge fields
         if (base.getType() == ModuleNodeType.OBJECT) {
-            ObjectNode baseObject = base.asObjectNode();
+            ObjectNode baseObject = base.asObject();
             return new ObjectNode(
                     Stream.concat(baseObject.fields.entrySet().stream(), this.fields.entrySet().stream())
                             .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b.mergeOnto(a)))

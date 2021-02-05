@@ -61,17 +61,17 @@ public class ListNode implements ModuleNode {
     }
 
     @Override
-    public ObjectNode asObjectNode() {
+    public ObjectNode asObject() {
         throw new NodeCastException();
     }
 
     @Override
-    public StringNode asStringNode() {
+    public StringNode asString() {
         throw new NodeCastException();
     }
 
     @Override
-    public ListNode asListNode() {
+    public ListNode asList() {
         return this;
     }
 
