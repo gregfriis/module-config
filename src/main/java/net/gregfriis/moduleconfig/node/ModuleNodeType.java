@@ -7,5 +7,6 @@ public enum ModuleNodeType {
     OBJECT,
     LIST,
     STRING,
-    NUMBER
+    NUMBER,
+    BOOLEAN
 }

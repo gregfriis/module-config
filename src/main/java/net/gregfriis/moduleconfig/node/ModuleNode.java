@@ -24,5 +24,9 @@ public interface ModuleNode {
         throw new NodeCastException();
     }
 
+    default BooleanNode asBoolean() {
+        throw new NodeCastException();
+    }
+
     ModuleNode mergeOnto(ModuleNode base);
 }

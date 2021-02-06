@@ -3,10 +3,7 @@ package net.gregfriis.moduleconfig.node.mapping;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import net.gregfriis.moduleconfig.node.ListNode;
-import net.gregfriis.moduleconfig.node.ModuleNode;
-import net.gregfriis.moduleconfig.node.NumberNode;
-import net.gregfriis.moduleconfig.node.StringNode;
+import net.gregfriis.moduleconfig.node.*;
 import net.gregfriis.moduleconfig.node.exception.NodeMappingException;
 
 import java.util.ArrayList;
@@ -25,6 +22,9 @@ public class JacksonModuleNodeMapper {
             }
             if (jsonNode.isTextual()) {
                 return StringNode.create(jsonNode.textValue());
+            }
+            if (jsonNode.isBoolean()) {
+                return BooleanNode.create(jsonNode.booleanValue());
             }
         }
         if (jsonNode.isObject()) {

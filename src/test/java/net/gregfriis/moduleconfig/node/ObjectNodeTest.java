@@ -9,7 +9,7 @@ public class ObjectNodeTest {
 
     @Test
     public void testToString() {
-        assertEquals("{l:[\"a\",\"b\",\"c\"],n:0,s:\"a\"}", OBJECT_ALL_TYPES.toString());
+        assertEquals("{b:true,l:[\"a\",\"b\",\"c\"],n:0,s:\"a\"}", OBJECT_ALL_TYPES.toString());
     }
 
     @Test

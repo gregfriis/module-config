@@ -17,5 +17,6 @@ public class ModuleNodeTestUtils {
             .withField("s", STRING_A)
             .withField("n", NUMBER_0)
             .withField("l", LIST_ABC)
+            .withField("b", BooleanNode.TRUE)
             .build();
 }
