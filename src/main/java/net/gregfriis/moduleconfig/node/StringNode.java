@@ -13,7 +13,7 @@ public class StringNode implements ModuleNode {
         this.value = value;
     }
 
-    public String getValue() {
+    public String value() {
         return value;
     }
 

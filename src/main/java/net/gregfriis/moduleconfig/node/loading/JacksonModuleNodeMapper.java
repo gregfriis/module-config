@@ -1,4 +1,4 @@
-package net.gregfriis.moduleconfig.node.mapping;
+package net.gregfriis.moduleconfig.node.loading;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;

@@ -17,6 +17,14 @@ public class NumberNode implements ModuleNode {
         return new NumberNode(value);
     }
 
+    public int intValue() {
+        return value.intValue();
+    }
+
+    public double doubleValue() {
+        return value.doubleValue();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
